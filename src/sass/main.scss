@@ -1,0 +1,643 @@
+:root {
+  font-size: 13px;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import "./colors/colors";
+@import "./radius/radius";
+@import "./shadows/shadow";
+@import "./positioning/positioning";
+@import "./display/display";
+@import "./buttons/buttons";
+@import "./inputs/slider";
+@import "./inputs/textInput";
+@import "./inputs/radio_and_checkbox";
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: $b_prime;
+  font-family: "Poppins", sans-serif;
+  // transition: 150ms ease-out;
+}
+
+a {
+  text-decoration: none;
+  color: $f-color1;
+}
+input {
+  outline: none;
+  border: none;
+}
+
+input[type="range"] {
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  @include slider($b-accent);
+}
+
+body {
+  transition: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: lighter;
+  color: $f-color1;
+}
+// =====================
+.visualizer {
+  position: absolute;
+  top: 2rem;
+  left: 100px;
+}
+.appbar {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+}
+
+.abs-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.abs-center {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.abs-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.avatar {
+  // transform: scale(1.2);
+  border-radius: 50%;
+  border: 2px solid $f-color2;
+}
+
+.dimmer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  // z-index: 3;
+  transition: 300ms ease;
+  transform: translateX(-100%);
+}
+
+.sideMenu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  transition: 0.3s ease-in-out;
+}
+
+.bars-container {
+  width: 90%;
+  height: 370px;
+  display: flex;
+  align-items: flex-end;
+  margin: auto;
+  // border: 1px solid white;
+  background-image: linear-gradient($b-prime, rgba(0, 0, 0, 0.2));
+  padding: 1rem;
+  position: relative;
+}
+
+.bars {
+  flex: 2 1 auto;
+  margin: 1px;
+  background-color: $b-accent;
+  transition: 0.2s ease;
+  // background-color: $b-error;
+}
+
+.algo-options {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 190px;
+  height: 35px;
+  box-shadow: $thin-inset;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.sorting-algorithms {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.sorting-algorithms div:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: $b-accent;
+  // color: $b-accent;
+}
+.sorting-algorithms div:active {
+  color: $b-error;
+}
+
+.sorting-panel {
+  width: 90%;
+  height: 100px;
+  border-bottom: 1px solid $f-color2;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.rgba2 {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1rem;
+  overflow: hidden;
+  color: $f-color1;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+// ---> Searching Visualizer
+
+.searchVisualizerContainer {
+  overflow: hidden;
+}
+
+.searchItemInput {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  top: -1rem;
+}
+
+.linearSearch,
+.binarySearch {
+  width: 100%;
+  min-height: 150px;
+  max-height: 200px;
+  margin: 1rem auto;
+  overflow: hidden;
+  flex-wrap: nowrap;
+  position: relative;
+}
+.linearSearch > div,
+.binarySearch > div {
+  height: 100%;
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5rem;
+}
+.binarySearch > div {
+  align-items: flex-end;
+}
+.linearSearch > div > div,
+.binarySearch > div > div {
+  flex: 2 1 auto;
+  margin: 1px;
+  background-color: $b-accent;
+  transition: 0.2s ease;
+}
+
+.searchingVisualizerPanel {
+  height: 100px;
+  background-color: transparent;
+}
+
+.searchingVisualizerPanel > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  flex-wrap: nowrap;
+  background-color: transparent;
+}
+
+.searchLabel {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem;
+  opacity: 0.9;
+}
+
+
+//  @@@@@@@@@@@@@@@@@@@@@ PATH FINDING VISUALIZER @@@@@@@@@@@@@@@@@@@@@
+
+.pathfinding-algoOptions {
+  width: 200px;
+  height: 35px;
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: 0.5s ease;
+}
+
+.pathfinding-algo-dropdown {
+  position: absolute;
+  padding: 1rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  transition: 0.5s;
+}
+
+.pathAlgo-options {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  transition: 0.2s ease-in-out;
+}
+.pathAlgo-options > div {
+  padding: 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: $b-accent;
+  }
+}
+
+.search-field {
+  width: 98%;
+  height: 390px;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  top: 1rem;
+}
+
+.search-field > div {
+  width: 1250px;
+  height: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(50, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  grid-gap: 0;
+  position: relative;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.2),
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent,
+    rgba(0, 0, 0, 0.2)
+  );
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.node {
+  opacity: 0.1;
+  border: 1px solid white;
+}
+
+.start {
+  background-color: yellowgreen;
+  opacity: 1;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: 0;
+  transform: scale(1.3);
+  animation: SCALE 1s ease;
+}
+.finish {
+  background-color: crimson;
+  opacity: 1;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: 0;
+  transform: scale(1.3);
+  animation: SCALE 1s ease;
+}
+@keyframes SCALE {
+  from {
+    transition: ease-in-out;
+    transform: scale(0.5);
+  }
+  to {
+    transition: ease-in-out;
+    transform: scale(1.3);
+  }
+}
+@keyframes SCALE2 {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.obstacle {
+  background-color: rgba(255, 255, 255, 0.8);
+  animation: weight 0.4s ease-in-out;
+}
+.path {
+  background-color: cyan;
+  opacity: 1;
+  border: none;
+  transition: 0.3s ease;
+  animation: path 1.5s;
+}
+@keyframes path {
+  from {
+    background-color: red;
+  }
+  to {
+    background-color: cyan;
+  }
+}
+.visited {
+  transition: 0.3s ease-in;
+  background: radial-gradient(orange, yellow);
+  opacity: 1;
+  border: none;
+  animation: SCALE2;
+}
+.pathFinding-panel {
+  position: absolute;
+  bottom: 2rem;
+  height: 50px;
+  width: 90vw;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+.pathFinding-panel > div {
+  width: 1000px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.weight {
+  opacity: 0.5;
+  border: none;
+  background: url(../assets/weight.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: cyan;
+  animation: weight 0.4s ease-in-out;
+}
+@keyframes weight {
+  0% {
+    background-size: 0%;
+  }
+  80% {
+    background-size: 60%;
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.user-guide-window {
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 10;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+
+  & * {
+    background-color: transparent;
+    color: $b-prime;
+    text-align: center;
+  }
+  & h1 {
+    font-weight: bold;
+    font-size: 4rem;
+    margin-top: 3rem;
+  }
+  & h2 {
+    font-weight: bold;
+    color: red;
+  }
+  & p {
+    padding: 5rem;
+    font-size: 1.5rem;
+  }
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  & button {
+    all: unset;
+    box-sizing: border-box;
+    padding: 0.5rem 2rem;
+    text-align: center;
+    color: white;
+    margin: 0.5rem;
+    cursor: pointer;
+  }
+  & button:nth-child(1) {
+    background-color: $b-prime;
+    &:hover {
+      color: $b-accent;
+    }
+  }
+  & button:nth-child(2) {
+    color: $b-prime;
+    border: 1px solid $b-prime;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+.dont-show-again {
+  position: absolute;
+  bottom: 0;
+  padding: 0.5rem;
+}
+.tutorials {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 10;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  & * {
+    background-color: transparent;
+    color: $b-prime;
+    transition: 0.3s ease;
+  }
+  & > span {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+  & > h1 {
+    font-weight: bold;
+    text-align: center;
+    padding: 4rem 3rem 0;
+    color: red;
+    font-size: 1.3rem;
+  }
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+  }
+}
+.content-container {
+  width: 100%;
+  height: 290px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > div {
+    height: 100%;
+  }
+  & > video {
+    height: 95%;
+  }
+}
+button.tutorialbtn {
+  all: unset;
+  box-sizing: border-box;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  color: white;
+  margin: 0.5rem;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+.tutorialbtn:nth-child(1) {
+  border: 1px solid $b-prime;
+  color: $b-prime;
+}
+.tutorialbtn:nth-child(2) {
+  background-color: $b-prime;
+  color: white;
+}
+
+//  @@@@@@@@@@@@@@@@@@@@@ MEDIA QUERY @@@@@@@@@@@@@@@@@@@@@
+@media screen and (max-width: 800px) {
+  .content-container > video {
+    width: 100%;
+  }
+  .user-guide-window {
+    width: 85vw;
+    & h1 {
+      font-size: 2rem;
+    }
+    & h2 {
+      font-size: 1rem;
+    }
+    & p {
+      padding: 2rem;
+      font-size: 1.3rem;
+    }
+  }
+  .tutorials {
+    width: 85vw;
+    & > h1 {
+      margin: 1rem;
+      font-size: 1.5rem;
+    }
+    & > div {
+      padding-top: 0;
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .pathFinding-panel {
+    overflow-x: scroll;
+    width: 80vw;
+    bottom: 5rem;
+  }
+  .pathFinding-panel > div {
+    margin: 0;
+    justify-content: flex-start;
+    width: auto;
+  }
+  .search-field {
+    overflow-x: scroll;
+  }
+  .linearSearch > div,
+  .binarySearch > div {
+    width: 1000px;
+  }
+  .rgba2 {
+    overflow-x: scroll;
+  }
+  .searchingVisualizerPanel > div {
+    width: 800px;
+  }
+  .searchVisualizerContainer {
+    overflow-y: scroll;
+  }
+  .sorting-panel {
+    flex: none;
+    justify-content: left;
+    overflow-x: scroll;
+    width: 100%;
+  }
+  .bars-container {
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  .bars {
+    width: 3px;
+    flex: none;
+  }
+}
