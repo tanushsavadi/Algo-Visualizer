@@ -14,4 +14,7 @@ An interactive tool to help you visualize search and sorting algorithms through 
 You can try out the website application here:
 https://av-algo-visualizer.netlify.app/
 
+<br/>
 
+## Easter egg
+If you notice, the logo of the Algo-Visualizer is also on the website, once you find it, please do click it to enjoy an alternative experience of the visualizer ;) 
