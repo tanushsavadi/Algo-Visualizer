@@ -17,4 +17,4 @@ https://av-algo-visualizer.netlify.app/
 <br/>
 
 ## Easter egg
-If you notice, the logo of the Algo-Visualizer is also on the website, once you find it, please do click it to enjoy an alternative experience of the visualizer ;) 
+If you notice, the logo of the Algo-Visualizer is also on the website, once you find it, click it and enjoy an alternative experience of the visualizer ;) 
