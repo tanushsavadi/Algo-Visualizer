@@ -11,6 +11,7 @@ An interactive tool to help you visualize search and sorting algorithms through 
 <br/>
 
 ## Links
-<br/>
-You can experience the website application [here](https://share.streamlit.io/alphalaser/paratools/main/input.py)
+You can try out the website application here:
+https://av-algo-visualizer.netlify.app/
+
 
