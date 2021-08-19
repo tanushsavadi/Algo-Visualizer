@@ -23,6 +23,7 @@ If you notice, the logo of the Algo-Visualizer is also on the website, once you 
 
 ## Running Algo-Visualizer locally | Installation
 ### Step 1 - Install this repository as zip
+>Be sure to download this project where there is a minimum of 500 mb available on your respective devices
 
 - Click on the Green  &nbsp;` ↓ Code  `&nbsp; button in the homepage of the repository, located on the top right.
 - Now, using a zip file extractor, extract the zip file to your preferred location.
