@@ -46,7 +46,7 @@ cd C:\Users\Your_Account\Directory_where_files_are_installed
 ```bash
 npm install
 ```
-This install the necessary modules to get the project up and ready!
+This installs the necessary modules to get the project up and ready!
 >Kindly allow it some time install all the modules as this projects uses quite a bit of modules.
 
 ```bash
