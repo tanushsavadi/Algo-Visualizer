@@ -21,6 +21,12 @@ If you notice, the logo of the Algo-Visualizer is also on the website, once you 
 
 <br/>
 
+## Demo
+Here is a demo of my project:
+https://drive.google.com/file/d/1VZsf0m0qAcORmaEbN2AEzLFjfOmdTJDE/view?usp=sharing
+
+<br/>
+
 ## Running Algo-Visualizer locally | Installation
 ### Step 1 - Install this repository as zip
 >Be sure to download this project where there is a minimum of 500 mb available on your respective devices
